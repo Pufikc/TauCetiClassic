@@ -522,7 +522,7 @@ var/global/list/slot_equipment_priority = list(
 		return ..()
 
 /mob/proc/CanUseTopicInventory(mob/target)
-	if(is_busy() || isdrone(src) || incapacitated() || !isturf(target.loc) || !in_interaction_vicinity(target))
+	if(is_busy() || isdrone(src) || incapacitated() || (status_flags & FAKEDEATH) || !isturf(target.loc) || !in_interaction_vicinity(target))
 		return FALSE
 
 	if(ishuman(src) || isrobot(src) || ismonkey(src) || isIAN(src) || isxenoadult(src))

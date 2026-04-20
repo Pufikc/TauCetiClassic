@@ -69,6 +69,9 @@
 		client.click_intercept.InterceptClickOn(src, params, A)
 		return
 
+	if(incapacitated(NONE) || (status_flags & FAKEDEATH))
+		return
+
 	var/list/modifiers = params2list(params)
 
 	if(client.cob && client.cob.in_building_mode)
