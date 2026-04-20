@@ -3,7 +3,7 @@
 		return
 	if(who.status_flags & FAKEDEATH)
 		return
-	if(src.status_flags & FAKEDEATH)
+	if(status_flags & FAKEDEATH)
 		return
 	if(!who.CanUseTopicInventory(src))
 		return
