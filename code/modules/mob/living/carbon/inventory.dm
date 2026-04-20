@@ -48,7 +48,7 @@
 		return
 	if(who.status_flags & FAKEDEATH)
 		return
-	if(src.status_flags & FAKEDEATH)
+	if(status_flags & FAKEDEATH)
 		return
 	if(this_item)
 		if(QDELETED(this_item) || (this_item.flags & (ABSTRACT | DROPDEL)))
