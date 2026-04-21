@@ -69,7 +69,7 @@
 		client.click_intercept.InterceptClickOn(src, params, A)
 		return
 
-	if(incapacitated(NONE) || (status_flags & FAKEDEATH))
+	if(incapacitated(NONE))
 		return
 
 	var/list/modifiers = params2list(params)
