@@ -1,10 +1,6 @@
 /mob/living/carbon/proc/stripPanelUnEquip(mob/living/who, where, obj/item/this_item)
 	if(QDELETED(src) || QDELETED(who) || !where || who.is_busy(src))
 		return
-	if(who.status_flags & FAKEDEATH)
-		return
-	if(status_flags & FAKEDEATH)
-		return
 	if(!who.CanUseTopicInventory(src))
 		return
 
@@ -45,10 +41,6 @@
 
 /mob/living/carbon/proc/do_stripPanelUnEquip(mob/living/who, where, obj/item/this_item, strip_gloves = FALSE)
 	if(QDELETED(src) || QDELETED(who) || !where)
-		return
-	if(who.status_flags & FAKEDEATH)
-		return
-	if(status_flags & FAKEDEATH)
 		return
 	if(this_item)
 		if(QDELETED(this_item) || (this_item.flags & (ABSTRACT | DROPDEL)))
