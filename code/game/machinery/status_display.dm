@@ -234,17 +234,10 @@
 
 /obj/machinery/status_display/attackby(obj/item/I, mob/user)
 	if(iswrenching(I))
-		if(anchored)
-			if(I.use_tool(src, user, 2 SECOND, volume = 100, quality = QUALITY_WRENCHING))
-				anchored = FALSE
-				to_chat(user, "<span class='notice'>You unfasten \the [src] with \the [I].</span>")
-				deconstruct(TRUE)
-				return
-		else
-			if(I.use_tool(src, user, 2 SECOND, volume = 100, quality = QUALITY_WRENCHING))
-				anchored = TRUE
-				to_chat(user, "<span class='notice'>You fasten \the [src] to the wall with \the [I].</span>")
-				return
+		if(I.use_tool(src, user, 2 SECOND, volume = 100, quality = QUALITY_WRENCHING))
+			to_chat(user, "<span class='notice'>You unfasten \the [src] with \the [I].</span>")
+			deconstruct(TRUE)
+			return
 	..()
 
 /obj/machinery/status_display/deconstruct(disassembled)
