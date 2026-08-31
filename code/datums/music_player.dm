@@ -48,7 +48,7 @@ var/global/datum/notes_storage/note_cache_storage = new
  * > 	return ..() || ...conditions
  */
 /obj/proc/unable_to_play(mob/living/user)
-	return user.incapacitated() || user.lying
+	return user.incapacitated()
 
 
 /datum/music_player
